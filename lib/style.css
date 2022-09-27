@@ -1,0 +1,40 @@
+:root{
+  --ani-button-bg-color: #333;
+  --ani-button-text-color: #ffffff;
+}
+
+.__ani-button {
+  background-color: var(--ani-button-bg-color);
+  color: var(--ani-button-text-color);
+  cursor: pointer;
+  border: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  line-height: 32px;
+  white-space: nowrap;
+  text-align: center;
+  box-sizing: border-box;
+  user-select: none;
+  vertical-align: middle;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.__ani-button.small{
+  height: 24px;
+  line-height: 24px;
+  padding: 5px 11px;
+  font-size: 12px;
+}
+.__ani-button.large{
+  height: 40px;
+  line-height: 40px;
+  padding: 12px 19px;
+}
+.__ani-button:hover,.__ani-button:active  {
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
