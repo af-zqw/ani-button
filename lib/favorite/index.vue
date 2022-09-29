@@ -48,7 +48,7 @@ import SvgIcon from '../svg-icon/index.vue'
 
 const props = withDefaults(defineProps<{
   initValue?: boolean
-  size?: 'small' | 'default' |'large'
+  size?: ButtonSize
   iconSize?: number
   speed?: number
 }>(), {
@@ -243,5 +243,8 @@ onMounted(() => {
   transform: translate(-50%, -50%);
   position: absolute;
   z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 </style>

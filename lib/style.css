@@ -4,6 +4,7 @@
 }
 
 .__ani-button {
+  position: relative;
   background-color: var(--ani-button-bg-color);
   color: var(--ani-button-text-color);
   cursor: pointer;
