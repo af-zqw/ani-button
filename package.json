@@ -9,6 +9,10 @@
     ".": {
       "import": "./dist/ani-button.js",
       "require": "./dist/ani-button.umd.cjs"
+    },
+    "./style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "types": "./lib.d.ts",

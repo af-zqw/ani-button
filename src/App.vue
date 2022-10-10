@@ -16,6 +16,10 @@
       <SlideButton :placement="state.slidePlacement">打开</SlideButton>
       <button @click="changeSlidePlacement">测试更改数据</button>
     </div>
+
+    <div>
+      <SubmitButton>提交</SubmitButton>
+    </div>
   </div>
 </template>
 

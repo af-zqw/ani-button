@@ -16,10 +16,12 @@ setTimeout(() => {
 
 import FavoriteButton from './favorite/index.vue'
 import SlideButton from './slide/index.vue'
+import SubmitButton from './submit/index.vue'
 
 const install = (app: App) => {
   app.component(FavoriteButton.name, FavoriteButton)
   app.component(SlideButton.name, SlideButton)
+  app.component(SubmitButton.name, SubmitButton)
 }
 
 export default {
@@ -27,5 +29,6 @@ export default {
 }
 
 export {
-  FavoriteButton
+  FavoriteButton,
+  SlideButton
 }

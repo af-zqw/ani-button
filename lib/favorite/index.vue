@@ -1,6 +1,10 @@
 <template>
   <button class="__ani-button" :class="{small: size === 'small', large: size === 'large'}" ref="button" @click="reverse">
-    <div class="icon-wrapper" :class="{'no-margin': !$slots.default}">
+    <!-- 
+      v-memo 作用：当绑定的值没有变化时，dom不会更新渲染
+      防止slot内容更新，导致整个模板重新渲染，重新绑定样式导致样式错乱
+     -->
+    <div class="icon-wrapper" :class="{'no-margin': !$slots.default}" v-memo="[_value]">
       <div
         class="icon"
         :style="_value ? style.hide : style.show"
@@ -72,8 +76,11 @@ watch(() => props.initValue, (val) => {
   callback = () => {
     _value.value = val
     nextTick(() => {
+      // 更新动画绑定的dom
       ;(master as any) = null
       createTimeLine()
+
+      // dom上还存在动画设置的样式，手动设置初始化
       gsap.set(startIcon.value, {
         scale: 1
       })
@@ -117,7 +124,7 @@ const reverse = () => {
 }
 
 const complete = () => {
-  master.add(buttonShake())
+  buttonShake()
   emits('complete')
   callback && callback()
   active = false
